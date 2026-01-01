@@ -6,9 +6,9 @@
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
-    "bootstrap": "^5.3.3",
-    "next": "^16.1.1",
+    "bootstrap": "^5.3.8",
     "react": "^18.3.1",
+    "react-bootstrap": "^2.10.10",
     "react-dom": "^18.3.1",
     "react-router-dom": "^6.26.2",
     "react-scripts": "5.0.1",
@@ -16,10 +16,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "dev": "next dev",
     "build": "react-scripts build",
-    "build:next": "next build",
-    "start:next": "next start",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
