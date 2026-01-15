@@ -1,18 +1,12 @@
 import './App.css';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import NavbarReact from './componentes/navbar';
 
 function App() {
   return (
     <div className="App">
       <header className="hero">
-    
-        <nav className="nav">
-          <div className="brand">React landingpage</div>
-          <div className="nav-links">
-            <a href="#features">Features</a>
-            <a href="#pricing">Pricing</a>
-            <a href="#contact">Contact</a>
-          </div>
-        </nav>
+      <NavbarReact></NavbarReact>
 
         <div className="hero-content">
           <h1>React landingpage</h1>
