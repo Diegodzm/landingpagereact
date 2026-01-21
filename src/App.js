@@ -1,12 +1,12 @@
 import './App.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import NavbarReact from './componentes/navbar';
-
+import NavbarReact from './componentes/navbar.js';
+import './componentes/navbar.css';
 function App() {
   return (
     <div className="App">
       <header className="hero">
-      <NavbarReact></NavbarReact>
+      <NavbarReact/>
 
         <div className="hero-content">
           <h1>React landingpage</h1>
