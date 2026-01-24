@@ -1,12 +1,15 @@
 import './App.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import NavbarReact from './componentes/navbar.js';
-import './componentes/navbar.css';
+import BasicExample from './componentes/navbar.js';
+import { Navbar, Nav, Container } from 'react-bootstrap';
+import React from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 function App() {
   return (
     <div className="App">
+       <BasicExample/>
       <header className="hero">
-      <NavbarReact/>
 
         <div className="hero-content">
           <h1>React landingpage</h1>
@@ -16,20 +19,7 @@ function App() {
       </header>
 
       <main>
-        <section id="features" className="features">
-          <h2>Features</h2>
-          <p>Responsive, accessible, and easy to customize.</p>
-        </section>
-
-        <section id="pricing" className="pricing">
-          <h2>Pricing</h2>
-          <p>Free to start — scale as you grow.</p>
-        </section>
-
-        <section id="contact" className="contact">
-          <h2>Contact</h2>
-          <p>Contact us at <a href="mailto:hello@example.com">hello@example.com</a></p>
-        </section>
+    
       </main>
 
       <footer className="footer">
