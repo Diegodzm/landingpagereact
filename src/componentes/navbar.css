@@ -1,0 +1,14 @@
+/* navbar.css */
+.bg-custom-gradient {
+    /* Use this for a solid green */
+    background-color: #0b70b8 !important; 
+    
+    /* OR use this for a gradient effect */
+    background-image: linear-gradient(to right, #1abbe3, #050d82) !important;
+    
+    /* Ensuring text stays readable */
+    color: rgba(7, 7, 7, 0) !important;
+}
+.nav-link {
+    color: #35156b !important; 
+}
