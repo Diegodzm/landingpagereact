@@ -1,14 +1,33 @@
 /* navbar.css */
 .bg-custom-gradient {
-    /* Use this for a solid green */
-    background-color: #0b70b8 !important; 
-    
-    /* OR use this for a gradient effect */
-    background-image: linear-gradient(to right, #1abbe3, #050d82) !important;
-    
-    /* Ensuring text stays readable */
-    color: rgba(7, 7, 7, 0) !important;
+    background-image: linear-gradient(to right, var(--grad-start), var(--grad-end)) !important;
+    background-color: unset !important;
+    color: var(--text-on-primary) !important;
 }
-.nav-link {
-    color: #35156b !important; 
+
+/* Ensure navbar content is readable on the gradient */
+.navbar .navbar-brand,
+.navbar .nav-link,
+.navbar .nav-item,
+.navbar .dropdown-item {
+    color: white!important;
+    
+}
+
+.navbar .dropdown-item {
+    color: white!important;
+    background-image: linear-gradient(to right, var(--grad-start), var(--grad-end)) !important;
+    background-color: unset !important;
+    padding: 5 !important;
+    
+}
+.dropdown-menu {
+    padding:5 !important;
+    
+}
+    background-color: var(--grad-start) !important;
+.navbar .nav-link:hover,
+.navbar .navbar-brand:hover,
+.navbar .dropdown-item:hover {
+    color: var(--text-on-primary) !important;
 }

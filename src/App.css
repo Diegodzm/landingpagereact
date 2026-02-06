@@ -15,14 +15,29 @@
 
 /* Hero Section */
 .hero {
-  /* Using a more modern, subtle gradient */
-  background: linear-gradient(135deg, #4834d4 0%, #686de0 100%);
-  color: white;
+  /* Match the site gradient for cohesion */
+  background: linear-gradient(135deg, var(--grad-start), var(--grad-end));
+  background-size: 200% 200%;
+  animation: hero-shine 8s linear infinite;
+  will-change: background-position;
+  color: var(--text-on-primary);
   padding: 8rem 1rem; /* Increased vertical padding for impact */
   text-align: center;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+@keyframes hero-shine {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 .hero-content h1 {
@@ -45,7 +60,7 @@
 .cta {
   display: inline-block;
   background: #ffffff;
-  color: #4834d4;
+  color: var(--grad-end);
   padding: 1rem 2rem;
   border-radius: 50px; /* Pill shape is more modern */
   text-decoration: none;
@@ -65,8 +80,28 @@
 .footer {
   text-align: center;
   padding: 2rem 0;
-  background: #ffffff;
-  border-top: 1px solid #edf2f7;
-  color: #718096;
+  background-color: var(--page-bottom);
+  color: var(--footer-text);
+  border-top: 1px solid rgba(0,0,0,0.06);
   font-size: 0.9rem;
+  position: relative;
+}
+
+/* Subtle shade separating content from the footer */
+.footer::before {
+  content: "";
+  position: absolute;
+  top: -24px;
+  left: 0;
+  right: 0;
+  height: 24px;
+  background: linear-gradient(180deg, rgba(0,0,0,0.06), rgba(0,0,0,0));
+  pointer-events: none;
+}
+
+.footer .footer-credit {
+  margin-top: 0.5rem;
+  font-size: 0.875rem;
+  color: var(--footer-text);
+  opacity: 0.85;
 }
