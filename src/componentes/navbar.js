@@ -28,7 +28,7 @@ function NavbarReact() {
             navbarScroll
           >
             <Nav.Link as={Link} to="/textdisplay">TextDisplay</Nav.Link>
-            <Nav.Link href="#action2">ImgDisplay</Nav.Link>
+            <Nav.Link as={Link} to="/imgdisplay">ImgDisplay</Nav.Link>
             <NavDropdown title="Dropdown" id="navbarScrollingDropdown">
               <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
               <NavDropdown.Item href="#action4">
