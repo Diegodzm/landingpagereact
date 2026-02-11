@@ -1,7 +1,7 @@
 import React from 'react';
-import '../App.css';
 
-function HomePage() {
+
+function Login() {
   return (
     <div className="page-container">
       <header className="hero">
@@ -20,4 +20,4 @@ function HomePage() {
   );
 }
 
-export default HomePage;
+export default Login;

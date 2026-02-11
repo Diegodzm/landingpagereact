@@ -1,3 +1,4 @@
+import React, { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
@@ -5,16 +6,27 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import { Link } from 'react-router-dom';
+import LoginModal from './LoginModal';
 import './navbar.css';
 
 function NavbarReact() {
+  const [showLoginModal, setShowLoginModal] = useState(false);
+
+  const handleLoginClick = () => {
+    setShowLoginModal(true);
+  };
+
+  const handleCloseModal = () => {
+    setShowLoginModal(false);
+  };
   return (
+    <>
     <Navbar className="bg-custom-gradient" variant="dark" expand="lg">
       <Container fluid>
         <Navbar.Brand as={Link} to="/">
           <img
             alt="React Logo"
-            src="/logo192.png" // Path to the file in your public folder
+            src={process.env.PUBLIC_URL + '/logo192.png'}
             width="30"
             height="30"
             className="d-inline-block align-top me-2"
@@ -38,10 +50,10 @@ function NavbarReact() {
                 Something else here
               </NavDropdown.Item>
             </NavDropdown>
-             <Nav.Link href="#" >
+             <Nav.Link as={Link} to="/register">
               Register
             </Nav.Link>
-            <Nav.Link href="#">
+            <Nav.Link onClick={handleLoginClick} style={{ cursor: 'pointer' }}>
               Login
             </Nav.Link>
           </Nav>
@@ -57,6 +69,8 @@ function NavbarReact() {
         </Navbar.Collapse>
       </Container>
     </Navbar>
+    <LoginModal show={showLoginModal} onHide={handleCloseModal} />
+    </>
   );
 }
 

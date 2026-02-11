@@ -1,9 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { Container, Row, Col, Card, Carousel } from 'react-bootstrap';
 import '../styles/Imgdisplay.css';
 
 function Imgdisplay() {
-  const [currentSlide, setCurrentSlide] = useState(0);
-
   // Professional stock images from Unsplash API
   const carouselImages = [
     {
@@ -49,14 +48,6 @@ function Imgdisplay() {
     { url: 'https://images.unsplash.com/photo-1518176506295-34a08f5a2c17?w=400&h=340&fit=crop', height: 340 },
   ];
 
-  const handlePrevSlide = () => {
-    setCurrentSlide((prev) => (prev === 0 ? carouselImages.length - 1 : prev - 1));
-  };
-
-  const handleNextSlide = () => {
-    setCurrentSlide((prev) => (prev === carouselImages.length - 1 ? 0 : prev + 1));
-  };
-
   return (
     <div className="imgdisplay-container">
       {/* Hero Section */}
@@ -68,88 +59,100 @@ function Imgdisplay() {
       {/* Carousel Section */}
       <section className="img-section">
         <h2 className="section-title">Featured Carousel</h2>
-        <div className="carousel-container">
-          <div className="carousel-slide">
-            <img
-              src={carouselImages[currentSlide].url}
-              alt={carouselImages[currentSlide].title}
-              className="carousel-image"
-            />
-            <div className="carousel-caption">
-              <h3>{carouselImages[currentSlide].title}</h3>
-              <p>{carouselImages[currentSlide].description}</p>
-            </div>
-          </div>
-
-          <button className="carousel-btn carousel-btn-prev" onClick={handlePrevSlide}>
-            &#10094;
-          </button>
-          <button className="carousel-btn carousel-btn-next" onClick={handleNextSlide}>
-            &#10095;
-          </button>
-
-          <div className="carousel-indicators">
-            {carouselImages.map((_, index) => (
-              <span
-                key={index}
-                className={`indicator ${index === currentSlide ? 'active' : ''}`}
-                onClick={() => setCurrentSlide(index)}
-              ></span>
-            ))}
-          </div>
-        </div>
+        <Carousel className="carousel-container">
+          {carouselImages.map((image, index) => (
+            <Carousel.Item key={index}>
+              <img
+                className="carousel-image"
+                src={image.url}
+                alt={image.title}
+              />
+              <Carousel.Caption className="carousel-caption">
+                <h3>{image.title}</h3>
+                <p>{image.description}</p>
+              </Carousel.Caption>
+            </Carousel.Item>
+          ))}
+        </Carousel>
       </section>
 
       {/* Three Column Grid */}
       <section className="img-section">
         <h2 className="section-title">Three Column Grid Layout</h2>
-        <div className="grid-layout-three">
-          {galleryImages.map((image, index) => (
-            <div key={index} className="grid-item">
-              <img src={image} alt={`Gallery ${index + 1}`} className="grid-image" />
-              <div className="grid-overlay">
-                <p>Image {index + 1}</p>
-              </div>
-            </div>
-          ))}
-        </div>
+        <Container>
+          <Row className="g-4">
+            {galleryImages.map((image, index) => (
+              <Col key={index} xs={12} sm={6} lg={4}>
+                <Card className="grid-item h-100">
+                  <Card.Img variant="top" src={image} alt={`Gallery ${index + 1}`} className="grid-image" />
+                  <div className="grid-overlay">
+                    <p>Image {index + 1}</p>
+                  </div>
+                </Card>
+              </Col>
+            ))}
+          </Row>
+        </Container>
       </section>
 
       {/* Masonry Layout */}
       <section className="img-section">
         <h2 className="section-title">Masonry Layout</h2>
-        <div className="masonry-layout">
-          {masonryImages.map((item, index) => (
-            <div key={index} className="masonry-item">
-              <img src={item.url} alt={`Masonry ${index + 1}`} className="masonry-image" />
-            </div>
-          ))}
-        </div>
+        <Container>
+          <Row className="g-3">
+            {masonryImages.map((item, index) => (
+              <Col 
+                key={index} 
+                xs={12} 
+                sm={6} 
+                lg={4}
+                className={index === 1 || index === 4 ? 'masonry-tall' : ''}
+              >
+                <Card className="masonry-item h-100">
+                  <Card.Img variant="top" src={item.url} alt={`Masonry ${index + 1}`} className="masonry-image" />
+                </Card>
+              </Col>
+            ))}
+          </Row>
+        </Container>
       </section>
 
       {/* Large Featured + Side Images */}
       <section className="img-section">
         <h2 className="section-title">Featured Image Layout</h2>
-        <div className="featured-layout">
-          <div className="featured-main">
-            <img
-              src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&h=600&fit=crop"
-              alt="Featured"
-              className="featured-image"
-            />
-          </div>
-          <div className="featured-side">
-            <div className="featured-small">
-              <img src="https://images.unsplash.com/photo-1519904981063-b0cf448d479e?w=300&h=300&fit=crop" alt="Side 1" />
-            </div>
-            <div className="featured-small">
-              <img src="https://images.unsplash.com/photo-1495694335510-fcf239989fde?w=300&h=300&fit=crop" alt="Side 2" />
-            </div>
-            <div className="featured-small">
-              <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=300&h=300&fit=crop" alt="Side 3" />
-            </div>
-          </div>
-        </div>
+        <Container>
+          <Row className="g-4">
+            <Col lg={8}>
+              <Card className="featured-main h-100">
+                <Card.Img
+                  variant="top"
+                  src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&h=600&fit=crop"
+                  alt="Featured"
+                  className="featured-image"
+                />
+              </Card>
+            </Col>
+            <Col lg={4}>
+              <Row className="g-3">
+                <Col xs={12}>
+                  <Card className="featured-small">
+                    <Card.Img variant="top" src="https://images.unsplash.com/photo-1519904981063-b0cf448d479e?w=300&h=300&fit=crop" alt="Side 1" />
+                  </Card>
+                </Col>
+                <Col xs={12}>
+                  <Card className="featured-small">
+                    <Card.Img variant="top" src="https://images.unsplash.com/photo-1495694335510-fcf239989fde?w=300&h=300&fit=crop" alt="Side 2" />
+                  </Card>
+                </Col>
+                <Col xs={12}>
+                  <Card className="featured-small">
+                    <Card.Img variant="top" src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=300&h=300&fit=crop" alt="Side 3" />
+                  </Card>
+                </Col>
+              </Row>
+            </Col>
+          </Row>
+        </Container>
       </section>
 
       {/* Footer */}

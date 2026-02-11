@@ -1,0 +1,260 @@
+/* Login Modal Styles */
+.login-modal .modal-content {
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+}
+
+.login-modal-header {
+  background: linear-gradient(135deg, var(--grad-start), var(--grad-end));
+  color: white;
+  border: none;
+  border-radius: 12px 12px 0 0;
+  padding: 1.5rem;
+}
+
+.login-modal-header .btn-close {
+  filter: brightness(0) invert(1);
+}
+
+.login-modal-header .modal-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+.login-modal-body {
+  padding: 2rem;
+}
+
+/* Form Labels */
+.form-label {
+  font-weight: 600;
+  color: #050d82;
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+}
+
+/* Form Inputs */
+.modal-form-input {
+  border: 2px solid #e0e0e0;
+  border-radius: 6px;
+  padding: 0.65rem 0.95rem;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+  background-color: #f9f9f9;
+}
+
+.modal-form-input:focus {
+  border-color: var(--grad-start);
+  background-color: #ffffff;
+  box-shadow: 0 0 0 0.2rem rgba(26, 187, 227, 0.15);
+}
+
+.modal-form-input::placeholder {
+  color: #999;
+}
+
+.modal-form-input:disabled {
+  background-color: #f0f0f0;
+  cursor: not-allowed;
+}
+
+/* Captcha Checkbox Container */
+.captcha-checkbox-container {
+  background-color: #f5f5f5;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 1rem;
+  margin-top: 0.5rem;
+}
+
+.captcha-checkbox {
+  margin-bottom: 0.75rem;
+}
+
+.captcha-checkbox .form-check-input {
+  width: 20px;
+  height: 20px;
+  border: 2px solid #ccc;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.captcha-checkbox .form-check-input:checked {
+  background-color: var(--grad-start);
+  border-color: var(--grad-start);
+}
+
+.captcha-checkbox .form-check-input:focus {
+  border-color: var(--grad-start);
+  box-shadow: 0 0 0 0.2rem rgba(26, 187, 227, 0.25);
+}
+
+.captcha-checkbox .form-check-label {
+  font-weight: 600;
+  color: #050d82;
+  cursor: pointer;
+  margin-left: 0.5rem;
+  user-select: none;
+}
+
+.captcha-error {
+  color: #dc3545;
+  font-size: 0.85rem;
+  margin-top: 0.5rem;
+}
+
+.captcha-branding {
+  text-align: right;
+  margin-top: 0.75rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid #ddd;
+}
+
+.captcha-branding small {
+  color: #999;
+  font-size: 0.75rem;
+}
+
+/* Modal Button Group */
+.modal-button-group {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.btn-login,
+.btn-cancel {
+  flex: 1;
+  padding: 0.65rem 1.25rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.btn-login {
+  background: linear-gradient(135deg, var(--grad-start), var(--grad-end));
+  color: white;
+  box-shadow: 0 4px 15px rgba(26, 187, 227, 0.3);
+}
+
+.btn-login:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 25px rgba(26, 187, 227, 0.4);
+  color: white;
+}
+
+.btn-login:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.btn-login:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.btn-cancel {
+  background-color: #f0f0f0;
+  color: #050d82;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.btn-cancel:hover:not(:disabled) {
+  background-color: #e0e0e0;
+  color: #050d82;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+.btn-cancel:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.btn-cancel:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+/* Modal Footer Link */
+.modal-footer-link {
+  text-align: center;
+  padding-top: 1rem;
+  border-top: 1px solid #e0e0e0;
+}
+
+.modal-footer-link a {
+  color: var(--grad-start);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.modal-footer-link a:hover {
+  color: var(--grad-end);
+  text-decoration: underline;
+}
+
+/* Success Alert */
+.login-modal-body .alert {
+  border: none;
+  border-radius: 6px;
+  border-left: 4px solid #28a745;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.alert-success {
+  background: linear-gradient(135deg, #d4edda, #c3e6cb);
+  color: #155724;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .login-modal .modal-content {
+    border-radius: 8px;
+  }
+
+  .login-modal-header {
+    padding: 1.25rem;
+  }
+
+  .login-modal-header .modal-title {
+    font-size: 1.25rem;
+  }
+
+  .login-modal-body {
+    padding: 1.5rem;
+  }
+
+  .modal-form-input {
+    padding: 0.6rem 0.85rem;
+    font-size: 0.9rem;
+  }
+
+  .modal-button-group {
+    gap: 0.5rem;
+  }
+
+  .btn-login,
+  .btn-cancel {
+    padding: 0.6rem 1rem;
+    font-size: 0.9rem;
+  }
+
+  .captcha-container {
+    padding: 0.75rem;
+  }
+
+  .captcha-question {
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
+  }
+}
