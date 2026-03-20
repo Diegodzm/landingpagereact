@@ -99,6 +99,26 @@
   pointer-events: none;
 }
 
+/* Animated Title */
+.animated-title {
+  display: inline-block;
+}
+
+.letter {
+  display: inline-block;
+  animation: rainbow 8s infinite;
+  animation-delay: calc(var(--i) * 0.1s);
+}
+
+@keyframes rainbow {
+  0% { color: #000000; } /* negro */
+  20% { color: #1f2937; } /* gris oscuro */
+  40% { color: #8b5cf6; } /* morado */
+  60% { color: #a855f7; } /* morado claro */
+  80% { color: #1abbe3; } /* azul claro de la página */
+  100% { color: #050d82; } /* azul oscuro de la página */
+}
+
 .footer .footer-credit {
   margin-top: 0.5rem;
   font-size: 0.875rem;

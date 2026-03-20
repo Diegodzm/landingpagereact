@@ -39,10 +39,10 @@ function NavbarReact() {
             style={{ maxHeight: '100px' }}
             navbarScroll
           >
-            <Nav.Link as={Link} to="/textdisplay">TextDisplay</Nav.Link>
-            <Nav.Link as={Link} to="/imgdisplay">ImgDisplay</Nav.Link>
+            <Nav.Link as={Link} to="/textdisplay">Textos</Nav.Link>
+            <Nav.Link as={Link} to="/imgdisplay">Imagenes</Nav.Link>
             <NavDropdown title="Dropdown" id="navbarScrollingDropdown">
-              <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
+              <NavDropdown.Item href="#action3">Dropdown</NavDropdown.Item>
               <NavDropdown.Item href="#action4">
                 Another action
               </NavDropdown.Item>
@@ -51,10 +51,10 @@ function NavbarReact() {
               </NavDropdown.Item>
             </NavDropdown>
              <Nav.Link as={Link} to="/register">
-              Register
+              Registro
             </Nav.Link>
             <Nav.Link onClick={handleLoginClick} style={{ cursor: 'pointer' }}>
-              Login
+              Ingreso
             </Nav.Link>
           </Nav>
           <Form className="d-flex">

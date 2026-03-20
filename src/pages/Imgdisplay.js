@@ -16,7 +16,7 @@ function Imgdisplay() {
       description: 'Contemporary office environment'
     },
     {
-      url: 'https://images.unsplash.com/photo-1495694335510-fcf239989fde?w=1200&h=600&fit=crop',
+      url: '/techcarrusel.jpg',
       title: 'Technology Innovation',
       description: 'Creative tech workspace'
     },
